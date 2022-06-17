@@ -1,3 +1,4 @@
+# ProjectDrDolirou
 #This is just a summary, because the project is under development so there will be a lot of changes.
 
 It's a study project to practice some things,
@@ -9,7 +10,6 @@ I'm using mongodb and postgresql as database,
 use mongo to store users' chat and friends list,
 and postgresql use to store the other information as shown in the images below.
 
-# ProjectDrDolirou
 #Isso é só um resumo, pois o projeto esta em desenvolvimento então vai ter muitas mudanças.
 
 É um projeto de estudo para praticar algumas coisas, 

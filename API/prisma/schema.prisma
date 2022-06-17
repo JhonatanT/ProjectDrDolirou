@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model tb_users {
+  id                String @id @default(uuid())
+  name              String
+  email             String
+  pass              String
+  createdAt     DateTime @default(now())
+  
+  ia_historico tb_ia_historico[]
+  financial tb_financial[]
+}
+
+model tb_ia_historico {
+  id       String @id @default(uuid())
+  user tb_users @relation(fields: [id_user], references: [id])
+  id_user  String
+  result   String
+  createdAt     DateTime @default(now())
+  
+}
+
+model tb_financial{
+  id            String @id @default(uuid())
+  user tb_users @relation(fields: [id_user], references: [id])
+  id_user       String
+  title         String
+  type          Boolean
+  type_expenses String
+  amout         Decimal @db.Decimal(9,2)
+  createdAt     DateTime @default(now())
+  
+}
+

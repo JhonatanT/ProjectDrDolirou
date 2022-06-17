@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat in DEV</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="chat">
+        <button type="button" id="logout">Sair</button>
+        <div class="messages" id="messages">
+            <div id="title">
+
+            </div>
+        </div>
+        <input type="text" name="message" placeholder="Digite Mensagem" id="message_input">
+    </div>
+</body>
+
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/plugin/isBetween.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/plugin/minMax.js"></script>
+<script src="./chat.js">
+</script>
+</html>

@@ -1,0 +1,53 @@
+const socket = io("http://localhost:3030")
+
+const urlSearch = new URLSearchParams(window.location.search);
+const for_ = urlSearch.get("for_")
+const id_chat = urlSearch.get("id_chat")
+console.log(for_, id_chat);
+const title_div = document.getElementById("title")
+title_div.innerHTML = `Olá ${for_} - Você está falando com ${id_chat}`
+
+socket.emit("id_chat_for_",{
+    id_chat,
+    for_
+}, (msgs) =>{
+    msgs.forEach((msg) => createMesssage(msg))
+})
+
+document.getElementById("message_input").addEventListener("keypress", (data) => {
+
+    if(data.key === 'Enter'){
+
+        const message = data.target.value
+
+        const msgs = {
+            id_chat,
+            for_,
+            message
+        }
+
+        socket.emit("message", msgs)
+        data.target.value = ''
+    }
+
+})
+
+socket.on("message", (data) => {
+    createMesssage(data)
+})
+
+function createMesssage(data){
+    console.log(data);
+    const MessageDiv = document.getElementById("messages")
+    MessageDiv.innerHTML += `
+        <div class="new_messages">
+            <label>
+                <strong>${data.for_}</strong> <span>${data.message} - ${dayjs(data.createdAt).format("DD/MM HH:mm")}</span>
+            </label>
+        </div>
+    `
+}
+
+document.getElementById("logout").addEventListener("click", (event) => {
+    window.location.href="/chat_DEV"
+})

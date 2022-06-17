@@ -1,0 +1,38 @@
+{
+    "name": "Project_DrDolirou",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/app.ts"
+    },
+    "devDependencies": {
+        "@types/bcryptjs": "^2.4.2",
+        "@types/cors": "^2.8.12",
+        "@types/express": "^4.17.13",
+        "@types/fs-extra": "^9.0.13",
+        "@types/jsonwebtoken": "^8.5.8",
+        "@types/multer": "^1.4.7",
+        "@types/uuid": "^8.3.4",
+        "ts-node-dev": "^1.1.8",
+        "typescript": "^4.6.4"
+    },
+    "dependencies": {
+        "@prisma/client": "^3.14.0",
+        "@types/socket.io": "^3.0.2",
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "ejs": "^3.1.8",
+        "express": "^4.18.1",
+        "express-async-errors": "^3.1.1",
+        "fs-extra": "^10.1.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.3.5",
+        "multer": "^1.4.5-lts.1",
+        "prisma": "^3.14.0",
+        "socket.io": "^4.5.1",
+        "socket.io-client": "^4.5.1",
+        "uuid": "^8.3.2"
+    }
+}

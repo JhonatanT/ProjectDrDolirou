@@ -21,6 +21,9 @@ Estou utilizando mongodb e postgresql como banco de dados,
 o mongo utilizo para armazenar o chat dos usuarios e a lista de amigos, 
 e o postgresql utilizo  para armazenar as outras informações confome as imagens a baixo.
 
+# API Documentation
+![](https://documenter.getpostman.com/view/14756285/UzBmLSJc#intro)
+
 
 ![image](https://user-images.githubusercontent.com/36746073/174398668-28ea6e51-2f93-4065-b0ff-1fb50e596d00.png)
 

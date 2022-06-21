@@ -16,12 +16,6 @@ app.use(function(req, res, next) {
   });
 app.use(router)
 
-app.use(express.static('../imgs/'));
-router.get('/', (req, res) => {
-    res.status(200).json({ message: 'Connected!' });
-});
-
-
 //Dev chat for system
 app.use(express.static(path.join(__dirname, '..','public')))
 app.set('views', path.join(__dirname, '..','public'))

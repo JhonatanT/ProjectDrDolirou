@@ -1,5 +1,5 @@
 const socket = io("http://localhost:3030")
-
+//mudar o arquivo para .js
 const urlSearch = new URLSearchParams(window.location.search);
 const for_ = urlSearch.get("for_")
 const id_chat = urlSearch.get("id_chat")

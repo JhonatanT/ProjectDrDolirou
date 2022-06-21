@@ -82,7 +82,6 @@ class AddFriendListService{
         const mong = new Mongo_friend_list();
         const con_mong = mong.Friend_List()
         const acc_to = await con_mong.friendList.findOneAndUpdate({'data.user_id': to_}
-
         ,{
             'data.list_friend': find_friend.friendsAccRjct_to, 
             'data.request_friend': friend_filter

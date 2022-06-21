@@ -12,18 +12,17 @@ interface data_user{
     name:string
     email:string
     pass:string
-    id_picture_mongo:string
 }
 
 const validate_User = new Validate_User()
 
 class AdduserService {
-    async execute({ name, email, id_picture_mongo, pass }:data_user){
+    async execute({ name, email, pass }:data_user){
 
         let create_friend_list;
         await mongodb()
 
-        const userExist = await validate_User.Validate_Exist_User({name, email, id_picture_mongo, pass})
+        const userExist = await validate_User.Validate_Exist_User({name, email, pass})
 
         if(userExist){
             const PassHash = await hash(pass, 8);
@@ -32,8 +31,7 @@ class AdduserService {
                 data:{
                     name,
                     email,
-                    pass: PassHash,
-                    id_picture_mongo
+                    pass: PassHash
                 }
             }).then( async (data) => {
                 const mong = new Mongo_friend_list()
@@ -43,8 +41,8 @@ class AdduserService {
 
                     data:{
                         user_id: data.id,
-                        list_friend: [{}],
-                        request_friend: [""]
+                        list_friend: [],
+                        request_friend: []
                     }
 
                 }).then(async (info) => {

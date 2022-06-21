@@ -1,5 +1,7 @@
 import { prisma } from "../../connection"
 import { Validate_User } from "../Validate_Data/User/Validate_User"
+import fs1 from 'fs-extra'
+import fs from 'fs/promises'
 
 interface data_user{
     id_user:string

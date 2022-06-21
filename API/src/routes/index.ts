@@ -7,13 +7,14 @@ import { addUser } from "./addUser.routes";
 import { updateUser } from "./updateUser.routes";
 import { authenticUser } from "./authenticUser.routes";
 import { listFinancial } from "./listFinancial.routes";
+import { findIMG } from "./findImgUser.routes";
 import { saveImg } from "./saveUpdateIMG.routes";
 
 const router = Router();
 
-
 router.use("/addUser", addUser)
 router.use("/UpIMG", ensureAuthenticated ,saveImg)
+router.use("/findIMG" , ensureAuthenticated, findIMG)
 router.use("/updateUser", ensureAuthenticated ,updateUser)
 router.use("/login", authenticUser)
 router.use("/addFinancial", ensureAuthenticated, addFinancial)
